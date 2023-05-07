@@ -1,0 +1,43 @@
+/* global color varible */
+
+:root{
+  --primary-color: #D7D7D9;
+  --secondary-color: #133340;
+  --tertiary-color:  #18778C;
+  --quaternary-color: #5BCCD9;
+  --quinary-color: #A66B56;
+}
+
+.container{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small */
+@media(min-width:768px){
+.container{
+  width: 750px;
+}
+}
+
+/* medium */
+@media(min-width:992px){
+  .container{
+      width: 970px;
+  }
+  .special-heading{
+      font-size: 60px;
+  }
+  .special-heading+p{
+      margin-top: -13;
+  }
+  }
+
+  /* large */
+  @media(mid-width:1200px){
+.container{
+  width: 1170px;
+}
+  }

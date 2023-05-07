@@ -1,0 +1,78 @@
+{
+  "categories": [
+    {
+      "name": "electronics",
+      "display": "الطب",
+      "image": "https://source.unsplash.com/800x450/?electronics",
+      "subcategories": [
+        "الكل",
+        "طب عام",
+        "طب أسنان",
+        "طب نفسي",
+        "طب أطفال",
+        "طب أمراض",
+        "طب أوعية دموية",
+        "طب أنف وأذن وحنجرة",
+        "طب أورام"
+      ]
+    },
+    {
+      "name": "clothes",
+      "display": "الشريعة",
+      "image": "https://source.unsplash.com/800x450/?clothes",
+      "subcategories": [
+        "الكل",
+        "شريعة",
+        "فقه",
+        "أصول",
+        "تفسير",
+        "أحكام"
+      ]
+    },
+    {
+      "name": "vehicles",
+      "display": "الهندسة",
+      "image": "https://source.unsplash.com/800x450/?vehicles",
+      "subcategories": [
+        "الكل",
+        "هندسة مدنية",
+        "هندسة كهربائية",
+        "هندسة ميكانيكية",
+        "هندسة صناعية",
+        "هندسة بترول",
+        "هندسة ميكاترونيكية"
+      ]
+    },
+    {
+      "name": "pets",
+      "display": "it",
+      "image": "https://source.unsplash.com/800x450/?pets",
+      "subcategories": [
+        "الكل",
+        "علم حاسوب",
+        "نظم معلومات محاسبية",
+        "نظم علومات ادارية"
+      ]
+    },
+    {
+      "name": "realestate",
+      "display": "التمريض",
+      "image": "https://source.unsplash.com/800x450/?realestate",
+      "subcategories": [
+        "الكل",
+        "تمريض عام",
+        "تمريض أطفال",
+        "تمريض أمراض",
+        "تمريض أورام"
+      ]
+    },
+    {
+      "name": "others",
+      "display": "اخرى",
+      "image": "https://source.unsplash.com/800x450/?others",
+      "subcategories": [
+        "الكل"
+      ]
+    }
+  ]
+}
