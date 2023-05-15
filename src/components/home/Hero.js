@@ -11,12 +11,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 export default function CallToActionWithAnnotation() {
-  const user = useSelector((state) => state.auth.user);
+
 
   return (
     <Container bg="gray.100" maxW="100%">
@@ -36,7 +35,7 @@ export default function CallToActionWithAnnotation() {
           and take the first step towards mastering your thesis by joining us today!.
         </Text>
         <Stack direction={"column"} spacing={3} align={"center"} alignSelf={"center"} position={"relative"}>
-          <Link to={user ? "/masterform" : "/login"}>
+          <Link >
             <Button
               colorScheme={"blue"}
               bg={"blue.400"}
@@ -45,11 +44,7 @@ export default function CallToActionWithAnnotation() {
               _hover={{
                 bg: "blue.500",
               }}
-              onClick={() => {
-                window.scrollTo(0, 0);
-                if (user) {
-                }
-              }}
+             
             >
               Get Started
             </Button>

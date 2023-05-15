@@ -2,14 +2,10 @@ import { Box, Button, Container, IconButton, Image, Input, SimpleGrid, Stack, Te
 import { BiMailSend } from "react-icons/bi";
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import { RiInstagramFill } from "react-icons/ri";
 import footerLogo from "../../assets/img/logo/footerLogo.png";
-
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
-
-import { useSelector } from "react-redux";
 
 
 export default function LargeWithNewsletter() {
@@ -45,7 +41,7 @@ export default function LargeWithNewsletter() {
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <Image src={footerLogo} alt="footer-logo" w="250px" />
             </Link>
-            <Text fontSize={"sm"}>© 2022 eMazad All rights reserved</Text>
+            <Text fontSize={"sm"}>© 2022 Master Thesis All rights reserved</Text>
             <Stack direction={"row"} spacing={3}>
               <Button label={"Facebook"} href={"#"} borderRadius="full">
                 <FaFacebook />

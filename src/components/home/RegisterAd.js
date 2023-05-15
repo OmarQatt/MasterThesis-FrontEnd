@@ -1,12 +1,9 @@
 import { Box, Button, Container, Image, Stack, Text } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
-
-import coinImage from "../../assets/img/MasterThesis.jpg";
+import masterThesis from "../../assets/img/MasterThesis.jpg";
 
 export default function RegisterAd() {
-  const isAuth = useSelector((state) => state.auth.isAuth);
+
 
   return (
     <Box bg="gray.100" py="24">
@@ -24,7 +21,7 @@ export default function RegisterAd() {
             <Text position={"relative"} color="white" textStyle={"h1"} fontSize="2.2rem">
             Are You Ready to Begin Your Thesis Journey?
             </Text>
-            <Link to={isAuth ? "/masterform" : "/login"}>
+            <Link >
               <Button
                 colorScheme="gray"
                 w="50%"
@@ -34,13 +31,13 @@ export default function RegisterAd() {
                   window.scrollTo(0, 0);
                 }}
               >
-                {isAuth ? "Start Thesis" : "Join Thesis"}
+               
               </Button>
             </Link>
           </Stack>
           <Stack>
             <Image
-              src={coinImage}
+              src={masterThesis}
               alt="coin"
               width="200px"
               filter="drop-shadow(0px 0px 0.75rem rgba(0, 0, 0, 0.5)) grayscale(100%)"

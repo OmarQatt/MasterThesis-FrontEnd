@@ -2,24 +2,17 @@ import React, { useState, useEffect } from 'react';
 import {
     Text,
     Flex,
-    Avatar,
     Link,
     Icon,
     useMediaQuery
 } from "@chakra-ui/react";
 import { Link as ReachLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import { FiHome } from "react-icons/fi";
-import { FaUsersSlash } from "react-icons/fa";
-import { TbDatabase, TbDatabaseOff } from "react-icons/tb";
-import { MdReport } from "react-icons/md";
-
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
 function Admin({ children }) {
-    const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.auth);
+
     const [isLessThan971] = useMediaQuery("(max-width: 971px)");
     const [sizeSlide, SetSizeSlide] = useState(!isLessThan971);
 
@@ -67,9 +60,9 @@ function Admin({ children }) {
                             gap='5'
 
                         >
-                            {/* <Avatar size={sizeSlide ? '2xl' : 'md'} src={user.image} alt="admin" borderRadius='full' /> */}
+                           
                             <Text as="h1" size="xl">Admin :
-                                {/* {user.fullName} */}
+                         
                             </Text>
                         </Flex>
 

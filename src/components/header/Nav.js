@@ -1,12 +1,10 @@
 import { ListItem, UnorderedList, useMediaQuery } from "@chakra-ui/react";
 import React, { useState } from "react";
-import {  useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 export default function Nav() {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
-  const isAuth = useSelector((state) => state.auth.isAuth);
   const [currentTab, setCurrentTab] = useState("home");
 
   return (

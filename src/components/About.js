@@ -18,6 +18,7 @@ import { MdFingerprint, MdOutlineSecurity } from "react-icons/md";
 import { SiFreecodecamp } from "react-icons/si";
 
 import Ahmad from "../assets/img/Ahmad.jpg";
+import Eyas from "../assets/img/eyas.jpeg";
 
 
 function AboutT() {
@@ -213,12 +214,12 @@ function AboutT() {
                 },
               }}
             >
-              <Image rounded={"lg"} height={250} width={250} objectFit={"cover"} src={Ahmad} />
+              <Image rounded={"lg"} height={250} width={250} objectFit={"cover"} src={Eyas} />
             </Box>
             <Spacer />
             <Stack pt={10} align={"center"} gap="3" mb="3">
               <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-              Ahmad
+              Eyas Hamdan
               </Heading>
               <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
                 FULL STACK DEVELOPER
@@ -307,7 +308,7 @@ function AboutT() {
             </Box>
             <Stack pt={10} align={"center"} gap="3" m="3">
               <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-                Ahmad
+                Ahmad Ali
               </Heading>
               <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
                 FULL STACK DEVELOPER
