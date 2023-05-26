@@ -56,7 +56,7 @@ function Categories() {
   const [LetterNameinEnglish, setLetterNameinEnglish] = useState('');
   const [id, setId] = useState('');
   useEffect(() => {
-    axios.get("http://localhost:9999/masterform").then((res) => {
+    axios.get(`${process.env.REACT_APP_RENDER_URL}/masterform`).then((res) => {
       setForm(res.data)
       console.log(res.data)
     })
@@ -64,21 +64,22 @@ function Categories() {
   }, [])
 
   const filtered = form.filter((item) => {
-    return item.userName.toLowerCase().includes(search.toLowerCase())
+    return item.userName.toLowerCase().includes(search.toLowerCase()) && item.studentNumber.toLowerCase().includes(search.toLowerCase())
+
   })
   console.log(filtered)
   const handleChange = (e) => {
     setSearchValue(e.target.value)
   }
   const deleteForm = (id) => {
-    axios.delete(`http://localhost:9999/masterform/${id}`).then((res) => {
+    axios.delete(`${process.env.REACT_APP_RENDER_URL}/masterform/${id}`).then((res) => {
       const del = form.filter((item) => item.id !== id)
       setForm(del)
     })
   }
   const handleEdit = (id) => {
     console.log("id", id)
-    axios.put(`http://localhost:9999/masterform/${id}`, {
+    axios.put(`${process.env.REACT_APP_RENDER_URL}/masterform/${id}`, {
       userName: studentName,
       studentNumber: studentNumber,
       teacherName: supervisorName,

@@ -46,6 +46,17 @@ export default function Multistep() {
   const [id, setId] = useState('');
  
 
+  const handleInputChange = (event) => {
+    // setStudentNumber(event.target.value)
+    const { value } = event.target;
+    // Remove any non-digit characters
+    const digitsOnly = value.replace(/\D/g, '');
+    const truncatedValue = digitsOnly.slice(0, 10); // Take only the first 10 digits
+
+    setStudentNumber(truncatedValue);
+  };
+ 
+
   function handleSubmit(e, toast){
     
     e.preventDefault();
@@ -62,7 +73,7 @@ export default function Multistep() {
     };
     console.log("data",data);
    
-    axios.post("http://localhost:9999/masterform", data)
+    axios.post(`${process.env.REACT_APP_RENDER_URL}/masterform`, data)
     .then((res) => {
       if (res.error) {
         toast({
@@ -153,7 +164,8 @@ export default function Multistep() {
             اسم الطالب
           </FormLabel>
           <Input id="userName" className='userName' placeholder="اسم الطالب" value={studentName} required
-          onChange={e => setStudentName(e.target.value)}
+          onChange={e => setStudentName(e.target.value) }
+         
           />
         </FormControl>
 
@@ -162,7 +174,7 @@ export default function Multistep() {
             رقم الطالب
           </FormLabel>
           <Input id="studentNumber" className='studentNumber' placeholder="رقم الطالب" value={studentNumber} required
-          onChange={e => setStudentNumber(e.target.value)}
+          onChange={e => handleInputChange(e) }
           />
         </FormControl>
       </Flex>
@@ -201,47 +213,43 @@ export default function Multistep() {
           size="sm"
           w="full"
           rounded="md">
-          <option>1990</option>
-          <option>1991</option>
-          <option>1992</option>
-          <option>1993</option>
-          <option>1994</option>
-          <option>1995</option>
-          <option>1996</option>
-          <option>1997</option>
-          <option>1998</option>
-          <option>1999</option>
-          <option>2000</option>
-          <option>2001</option>
-          <option>2002</option>
-          <option>2003</option>
-          <option>2004</option>
-          <option>2005</option>
-          <option>2006</option>
-          <option>2007</option>
-          <option>2008</option>
-          <option>2009</option>
-          <option>2010</option>
-          <option>2011</option>
-          <option>2012</option>
-          <option>2013</option>
-          <option>2014</option>
-          <option>2015</option>
-          <option>2016</option>
-          <option>2017</option>
-          <option>2018</option>
-          <option>2019</option>
-          <option>2020</option>
-          <option>2021</option>
-          <option>2022</option>
-          <option>2023</option>
-          <option>2024</option>
-          <option>2025</option>
-          <option>2026</option>
-          <option>2027</option>
-          <option>2028</option>
-          <option>2029</option>
-          <option>2030</option>
+         <option>1990/1991</option>
+          <option>1991/1992</option>
+          <option>1992/1993</option>
+          <option>1993/1994</option>
+          <option>1994/1995</option>
+          <option>1995/1996</option>
+          <option>1996/1997</option>
+          <option>1997/1998</option>
+          <option>1998/1999</option>
+          <option>1999/2000</option>
+          <option>2000/2001</option>
+          <option>2001/2002</option>
+          <option>2002/2003</option>
+          <option>2003/2004</option>
+          <option>2004/2005</option>
+          <option>2005/2006</option>
+          <option>2006/2007</option>
+          <option>2007/2008</option>
+          <option>2008/2009</option>
+          <option>2009/2010</option>
+          <option>2010/2011</option>
+          <option>2011/2012</option>
+          <option>2012/2013</option>
+          <option>2013/2014</option>
+          <option>2014/2015</option>
+          <option>2015/2016</option>
+          <option>2016/2017</option>
+          <option>2017/2018</option>
+          <option>2018/2019</option>
+          <option>2019/2020</option>
+          <option>2020/2021</option>
+          <option>2021/2022</option>
+          <option>2022/2023</option>
+          <option>2023/2024</option>
+          <option>2024/2025</option>
+          <option>2025/2026</option>
+          <option>2026/2027</option>
 
           
 
