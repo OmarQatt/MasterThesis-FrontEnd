@@ -70,6 +70,7 @@ export default function Nav() {
         }}
       >
         <Link to={"/about"}>about</Link>
+        <Link to={"/admin"}>admin</Link>
       </ListItem>
 
     
