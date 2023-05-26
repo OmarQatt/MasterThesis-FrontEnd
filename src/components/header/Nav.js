@@ -70,8 +70,24 @@ export default function Nav() {
         }}
       >
         <Link to={"/about"}>about</Link>
+        
+      </ListItem>
+      <ListItem
+        color={currentTab === "admin" ? "blue.500" : "gray.500"}
+        fontWeight={currentTab === "admin" ? "semibold" : "normal"}
+        p={2}
+        _hover={{ bg: "gray.100" }}
+        textTransform="capitalize"
+        onClick={() => {
+          setCurrentTab("admin");
+          localStorage.removeItem("category");
+          localStorage.removeItem("subCategory");
+        }}
+      >
         <Link to={"/admin"}>admin</Link>
       </ListItem>
+
+      
 
     
     </UnorderedList>
