@@ -43,9 +43,8 @@ function AboutT() {
             <Heading as="h1" size="4xl" color="gray.100" fontWeight="semibold">
               About Us
             </Heading>
-            <Text color="gray.200" fontSize="md" mixW="60%" textAlign="center" letterSpacing={1.2} lineHeight={1.8}>
-            MasterThesis is an online platform that provides a safe and secure environment for students to conduct research and complete their Master's thesis. With its user-friendly interface and easy-to-use features, MasterThesis offers a wide variety of comprehensive resources and real-time access to a vast number of research opportunities.
-            Join us today and embark on your journey towards academic success within minutes at MasterThesis!
+            <Text color="gray.200" fontSize="2xl" mixW="60%" textAlign="center" letterSpacing={1.2} lineHeight={1.8}>
+            A web page has been created to help students register their Master's theses web rather than entering them on paper
             </Text>
           </Box>
         </Flex>
@@ -61,7 +60,7 @@ function AboutT() {
                 padding={{ base: "4", md: "8" }}
               >
                 <Box px={{ base: "4", md: "8" }} py="6" mb="10">
-                  <Box
+                  {/* <Box
                     bg={useColorModeValue("gray.200", "gray.700")}
                     zIndex="10"
                     as={Flex}
@@ -84,9 +83,9 @@ function AboutT() {
                         Your data is safe with us. We use the latest technologies to protect your data.
                       </Text>
                     </Box>
-                  </Box>
+                  </Box> */}
                 </Box>
-                <Box px={{ base: "4", md: "8" }}>
+                {/* <Box px={{ base: "4", md: "8" }}>
                   <Box
                     bg={useColorModeValue("gray.200", "gray.700")}
                     zIndex="10"
@@ -109,7 +108,7 @@ function AboutT() {
                       </Text>
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
                 <Box px={{ base: "4", md: "8" }} py="6" mb="10">
                   <Box
                     bg={useColorModeValue("gray.200", "gray.700")}
@@ -131,7 +130,7 @@ function AboutT() {
                     </Text>
                     <Box p="6" flex="1 1 auto">
                       <Text color={useColorModeValue("gray.600", "gray.400")} fontSize="md" textAlign="center">
-                      Sign up now and experience the user-friendly interface of our website dedicated to Master Thesis! Join us and discover just how easy it is to use.
+                       user-friendly interface of our website dedicated to Master Thesis! Join us and discover just how easy it is to use.
                       </Text>
                     </Box>
                   </Box>

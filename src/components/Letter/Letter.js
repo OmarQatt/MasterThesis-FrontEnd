@@ -127,7 +127,7 @@ export default function Multistep() {
     setId('');
     
     }
-    //edit form axios.put
+   // 
    
 
    

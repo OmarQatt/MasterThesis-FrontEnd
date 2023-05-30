@@ -76,7 +76,7 @@ export default function Contact() {
                         variant="ghost"
                         leftIcon={<MdPhone color="rgb(49,130,206)" size="20px" />}
                       >
-                        +962 79 123 4567
+                        0781171489
                       </Button>
                       <Button
                         size="md"
@@ -84,7 +84,7 @@ export default function Contact() {
                         variant="ghost"
                         leftIcon={<MdEmail color="rgb(49,130,206)" size="20px" />}
                       >
-                        info.Thesis@gmail.com
+                        ahmad.aisa@gmail.com
                       </Button>
                       <Button
                         size="md"
@@ -92,7 +92,7 @@ export default function Contact() {
                         variant="ghost"
                         leftIcon={<MdLocationOn color="rgb(49,130,206)" size="20px" />}
                       >
-                        Amman, Jordan
+                        Al-Zarqa, Jordan
                       </Button>
                     </VStack>
                   </Box>

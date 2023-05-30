@@ -6,6 +6,8 @@ import {
   Button,
   IconButton,
 } from '@chakra-ui/react'
+import { Page,  View, Document, StyleSheet } from "@react-pdf/renderer";
+import { PDFViewer, ReactPDF, PDFDownloadLink } from "@react-pdf/renderer";
 import { useToast } from '@chakra-ui/react';
 import {
   Progress,
@@ -37,6 +39,11 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 
+
+import MyDocument from "./PDF";
+import { Link } from "react-router-dom";
+import html2pdf from 'html2pdf.js';
+import ReactDOMServer from 'react-dom/server';
 function Categories() {
 
   const [form, setForm] = useState([])
@@ -64,7 +71,7 @@ function Categories() {
   }, [])
 
   const filtered = form.filter((item) => {
-    return item.userName.toLowerCase().includes(search.toLowerCase()) && item.studentNumber.toLowerCase().includes(search.toLowerCase())
+    return item.studentNumber.toLowerCase().includes(search.toLowerCase())
 
   })
   console.log(filtered)
@@ -112,11 +119,115 @@ function Categories() {
       )
     alert('تم تعديل الطلب بنجاح');
   }
+
+  
+  // const pdfJSX = () => {
+  //   return (
+  //     <>
+  //       <Box>
+  //         {
+  //           form.map((data) => (
+  //             <Card bg={"blue.100"} mb={10} mt={5} key={data.id}>
+  //               <CardHeader>
+  //                 <Heading size="md">{data.userName}</Heading>
+  //               </CardHeader>
+  //               <CardBody>
+  //                 <Text>
+  //                   {data.studentNumber}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.teacherName}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.academicYear}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.semesterYear}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.collegeName}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.departmentName}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.LetterName}
+  //                 </Text>
+  //                 <Text>
+  //                   {data.LetterNameinEnglish}
+  //                 </Text>
+  //                 </CardBody>
+  //                 </Card>
+  //           ))
+
+  //         }
+  //       </Box>
+  //     </>
+  //   )
+  // }
+  
+  
+    const pdfJSXX= () => {
+      return (
+        <>
+          <Box>
+          {
+            form.map((data) => (
+              <Card bg={"blue.100"} mb={10} mt={5} key={data.id}>
+                <CardHeader>
+                  <Heading size="md">{data.userName}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>
+                    {data.studentNumber}
+                  </Text>
+                  <Text>
+                    {data.teacherName}
+                  </Text>
+                  <Text>
+                    {data.academicYear}
+                  </Text>
+                  <Text>
+                    {data.semesterYear}
+                  </Text>
+                  <Text>
+                    {data.collegeName}
+                  </Text>
+                  <Text>
+                    {data.departmentName}
+                  </Text>
+                  <Text>
+                    {data.LetterName}
+                  </Text>
+                  <Text>
+                    {data.LetterNameinEnglish}
+                  </Text>
+                  <Text>-------------</Text>
+                  </CardBody>
+                  </Card>
+            ))
+
+          }
+        </Box>
+        </>
+      )
+    }
+  
+    const printHandler = () => {
+      const printElement = ReactDOMServer.renderToString(pdfJSXX());
+      // const printElement = pdfJSX();
+  
+      html2pdf().from(printElement).save();
+    }
+  
+
+ 
+
   return (
     <>
       <Box>
-        <Center>
-          <Heading>Admin Page</Heading>
+        <Center mb={10}>
+          <Heading>بحث عن طريق الرقم الجامعي</Heading>
         </Center>
         <Center>
           <input
@@ -125,7 +236,18 @@ function Categories() {
             onChange={handleChange}
             value={search}
           />
+         
         </Center>
+       <Center>
+       <Button variant={"link"} colorScheme={"blue"} size={"lg"} onClick={() => printHandler()}>
+              Download All Data As PDF
+            </Button>
+        </Center>
+   
+            
+          
+    
+       
         <Grid
           templateColumns="repeat(3, 1fr)"
           gap={6}
@@ -134,13 +256,15 @@ function Categories() {
           marginTop="5%"
         >
           {form.filter((data) =>
-            data.userName
+            data.studentNumber
               .toLowerCase()
               .includes(search.toLowerCase())
           ).reverse().map((data) => (
             <Card bg={"blue.100"} mb={10} mt={5}>
               <CardHeader>
                 <Heading size="md">{data.userName}</Heading>
+               
+                
               </CardHeader>
               <CardBody>
                 <Text>
@@ -169,10 +293,10 @@ function Categories() {
                 </Text>
               </CardBody>
               <CardFooter>
-                <Button onClick={onOpen} colorScheme="blue" >Open Modal</Button>
+                <Button onClick={onOpen} colorScheme="blue" >Edit</Button>
                 <Modal isOpen={isOpen} onClose={onClose} >
                   <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
+                    {/* <ModalHeader>Modal Title</ModalHeader> */}
                     <ModalCloseButton />
                     <ModalBody>
                       <Box
@@ -184,16 +308,7 @@ function Categories() {
                         m="10px auto"
                         as="form"
                       >
-                        <Progress
-                          hasStripe
-                          value={progress}
-                          mb="5%"
-                          mx="5%"
-                          isAnimated
-                        ></Progress>
-                        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-                          الرجاء ملئ البيانات التالية
-                        </Heading>
+                        
                         <Flex>
                           <FormControl mr="5%">
                             <FormLabel htmlFor="userName" fontWeight={'normal'}>
@@ -246,47 +361,43 @@ function Categories() {
                             size="sm"
                             w="full"
                             rounded="md">
-                            <option>1990</option>
-                            <option>1991</option>
-                            <option>1992</option>
-                            <option>1993</option>
-                            <option>1994</option>
-                            <option>1995</option>
-                            <option>1996</option>
-                            <option>1997</option>
-                            <option>1998</option>
-                            <option>1999</option>
-                            <option>2000</option>
-                            <option>2001</option>
-                            <option>2002</option>
-                            <option>2003</option>
-                            <option>2004</option>
-                            <option>2005</option>
-                            <option>2006</option>
-                            <option>2007</option>
-                            <option>2008</option>
-                            <option>2009</option>
-                            <option>2010</option>
-                            <option>2011</option>
-                            <option>2012</option>
-                            <option>2013</option>
-                            <option>2014</option>
-                            <option>2015</option>
-                            <option>2016</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                            <option>2020</option>
-                            <option>2021</option>
-                            <option>2022</option>
-                            <option>2023</option>
-                            <option>2024</option>
-                            <option>2025</option>
-                            <option>2026</option>
-                            <option>2027</option>
-                            <option>2028</option>
-                            <option>2029</option>
-                            <option>2030</option>
+                            <option>1990/1991</option>
+          <option>1991/1992</option>
+          <option>1992/1993</option>
+          <option>1993/1994</option>
+          <option>1994/1995</option>
+          <option>1995/1996</option>
+          <option>1996/1997</option>
+          <option>1997/1998</option>
+          <option>1998/1999</option>
+          <option>1999/2000</option>
+          <option>2000/2001</option>
+          <option>2001/2002</option>
+          <option>2002/2003</option>
+          <option>2003/2004</option>
+          <option>2004/2005</option>
+          <option>2005/2006</option>
+          <option>2006/2007</option>
+          <option>2007/2008</option>
+          <option>2008/2009</option>
+          <option>2009/2010</option>
+          <option>2010/2011</option>
+          <option>2011/2012</option>
+          <option>2012/2013</option>
+          <option>2013/2014</option>
+          <option>2014/2015</option>
+          <option>2015/2016</option>
+          <option>2016/2017</option>
+          <option>2017/2018</option>
+          <option>2018/2019</option>
+          <option>2019/2020</option>
+          <option>2020/2021</option>
+          <option>2021/2022</option>
+          <option>2022/2023</option>
+          <option>2023/2024</option>
+          <option>2024/2025</option>
+          <option>2025/2026</option>
+          <option>2026/2027</option>
                           </Select>
                         </FormControl>
                         <FormControl as={GridItem} colSpan={[6, 3]}>
@@ -464,7 +575,7 @@ function Categories() {
                       <Button colorScheme='blue' mr={3} onClick={onClose}>
                         Close
                       </Button>
-                      <Button variant='ghost'>Secondary Action</Button>
+                      {/* <Button variant='ghost'>Secondary Action</Button> */}
                     </ModalFooter>
                   </ModalContent>
                 </Modal>

@@ -21,18 +21,16 @@ export default function CallToActionWithAnnotation() {
     <Container bg="gray.100" maxW="100%">
       <Stack as={Flex} textAlign={"center"} spacing={{ base: 8, md: 14 }} py={{ base: 20, md: 32 }}>
         <Heading fontWeight={600} fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }} lineHeight={"110%"}>
-          Welcome to MasterThesis!
+          Welcome to
 
           <br />
           <Text as={"span"} color={"blue.500"}>
-            Start Your Research Journey
-            and Achieve Academic Excellenc
+          research system for graduate studies
           </Text>
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"} fontSize={"xl"} alignSelf={"center"}>
-          Our platform provides comprehensive resources and expert guidance to help you successfully complete your Master's
-          thesis. Showcase your research skills, contribute to the academic community,
-          and take the first step towards mastering your thesis by joining us today!.
+          Archiving master theses that were created in the past and entered in paper form, and we converted
+          Paper information into electronic information to make it easier for the administrator to search for old information
         </Text>
         <Stack direction={"column"} spacing={3} align={"center"} alignSelf={"center"} position={"relative"}>
           <Link >
@@ -44,7 +42,7 @@ export default function CallToActionWithAnnotation() {
               _hover={{
                 bg: "blue.500",
               }}
-             
+
             >
               Get Started
             </Button>

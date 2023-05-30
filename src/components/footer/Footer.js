@@ -34,8 +34,8 @@ export default function LargeWithNewsletter() {
   }
 
   return (
-    <Box bg="gray.50" boxShadow={"0 0 10px 0 rgba(0,0,0,0.1)"}>
-      <Container as={Stack} maxW={"6xl"} py={10}>
+    <Box bg="gray.50" boxShadow={"0 0 10px 0 rgba(0,0,0,0.1)"} >
+      <Container as={Stack} maxW={"6xl"} py={10} >
         <SimpleGrid templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr" }} spacing={8}>
           <Stack spacing={2} justify="center" align="center">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -57,64 +57,12 @@ export default function LargeWithNewsletter() {
               </Button>
             </Stack>
           </Stack>
-          <Stack align={"row"}>
-            <Text fontWeight="bold" fontSize={"lg"} mb={2}>
-              Useful Links
-            </Text>
-            <Link to="/about" onClick={() => window.scrollTo(0, 0)}>
-              About us
-            </Link>
-            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-              Contact us
-            </Link>
-           
-            <Link to="/items" onClick={() => window.scrollTo(0, 0)}>
-              Items
-            </Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <Text fontWeight="bold" fontSize={"lg"} mb={2}>
-              Support
-            </Text>
-            <Link href={"#"}>Help Center</Link>
-            <Link href={"#"}>Terms of Service</Link>
-            <Link href={"#"}>Legal</Link>
-            <Link href={"#"}>Privacy Policy</Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <Text fontWeight="bold" fontSize={"lg"} mb={2}>
-              Subscribe to our Newsletter
-            </Text>
-            <form ref={form} onSubmit={sendEmail}>
-              <Stack direction={"row"}>
-                <Input
-                  name={"user_email"}
-                  type={"email"}
-                 
-                  placeholder={"Your email address"}
-                  bg="gray.200"
-                  border={0}
-                  fontSize={"sm"}
-                  _focus={{
-                    bg: "gray.300",
-                  }}
-                  isRequired
-                />
-                <IconButton
-                  as="button"
-                  type="submit"
-                  colorScheme="blue"
-                  _hover={{
-                    bg: "blue.700",
-                  }}
-                  aria-label="Subscribe"
-                  icon={<BiMailSend />}
-                />
-              </Stack>
-            </form>
-          </Stack>
+          
+          
         </SimpleGrid>
+        
       </Container>
+      
     </Box>
   );
 }
